@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+/*                WordManipulator */
+
+
+#newTodo{
+ width: 100vw;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.stickOnHead{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+          /* Navbar */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px; /* Decreased by 2 pixels */
+  height: 30px; /* Decreased by 2 pixels */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.App-link {
-  color: #61dafb;
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px; /* Decreased by 2 pixels */
+  width: 22px; /* Decreased by 2 pixels */
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(22px); /* Decreased by 2 pixels */
+  -ms-transform: translateX(22px); /* Decreased by 2 pixels */
+  transform: translateX(22px); /* Decreased by 2 pixels */
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
